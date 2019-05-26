@@ -19,7 +19,7 @@ class GameTable extends Component {
           {
             this.props.games[0] &&
             this.props.games.map( game => {
-              if(game.quantity > 0 || game.quantity == null)
+              if(game.quantity > 0 || game.quantity == "")
                 return <tr key={game.id}>
                   <td><img src={game.imageURL} height="200"/></td>
                   <td><a href={game.descriptionURL}>{ game.title }</a></td>
