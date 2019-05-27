@@ -57,7 +57,7 @@ class Cart extends Component {
         }
       }
 
-      this.setState({ cart, "total": total });
+      this.setState({ cart, "total": total.toFixed(2) });
     } else {
       alert('FAIL');
     }
