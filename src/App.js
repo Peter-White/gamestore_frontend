@@ -5,6 +5,7 @@ import Header from './components/header';
 import ShoppingIndex from './components/shoppingIndex';
 import AddGame from './views/addGame';
 import EditGame from './views/editGame';
+import Cart from './views/cart';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path='/' render={() => <ShoppingIndex />} />
         <Route exact path='/add_game' render={() => <AddGame />} />
         <Route path='/edit_game/' render={() => <EditGame />} />
+        <Route path='/cart' render={() => <Cart />} />
       </Switch>
     </div>
   );
