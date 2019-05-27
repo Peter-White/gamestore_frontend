@@ -6,7 +6,6 @@ class GameTable extends Component {
     return (
       <table className="table">
         <thead>
-
         </thead>
         <tbody>
           {
@@ -20,7 +19,7 @@ class GameTable extends Component {
                   <td>{game.rating}</td>
                   <td>{game.type}</td>
                   <td>{game.genre}</td>
-                  <td><button className="btn btn-primary">Add To Cart</button></td>
+                  <td><button onClick={() => this.props.addToCart(game.id)} className="btn btn-primary">Add To Cart</button></td>
                   <td><button className="btn btn-danger">Delete Game</button></td>
                 </tr>
             })

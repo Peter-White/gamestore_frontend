@@ -12,7 +12,6 @@ class ShoppingIndex extends Component {
   }
 
 componentWillMount = async() => {
-
   let URL = "http://localhost:5000/api/games";
   let response = await fetch(URL);
   let data = await response.json();
@@ -20,10 +19,28 @@ componentWillMount = async() => {
   this.setState({ 'games' : data });
 }
 
+addToCart = async(id) => {
+  let URL = `http://localhost:5000/api/cart/save`;
+  let response = await fetch(URL, {
+      headers: {
+        'Content-Type': 'application/json',
+        'game_id': id
+      }
+    });
+
+  let data = await response.json();
+
+  if(data.Success) {
+    alert("Game added")
+  } else {
+    alert('FAIL');
+  }
+}
+
   render() {
     return(
       <div className="container">
-        <GameTable games={this.state.games}/>
+        <GameTable addToCart={this.addToCart} games={this.state.games}/>
       </div>
     );
   }
